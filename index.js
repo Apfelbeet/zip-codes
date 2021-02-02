@@ -2,7 +2,8 @@ const csv = require("csv-parser");
 const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 const fs = require("fs");
 
-//Formatierung: long,lat;plz;name
+//Kopfzeile: Geo Point;Ortsname;Postleitzahl
+//Formatierung Eintrag: long, lat; plz; name
 const SOURCE_FILE = "in.csv"; //input file
 const EXPORT_NAME = "out.csv" //output file
 
