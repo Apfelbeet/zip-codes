@@ -2,24 +2,15 @@ const csv = require("csv-parser");
 const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 const fs = require("fs");
 
-//Kopfzeile: Geo Point;Ortsname;Postleitzahl
-//Formatierung Eintrag: long, lat; plz; name
-const SOURCE_FILE = "in.csv"; //input file
+//Kopfzeile: Geo Point;Postleitzahl
+//Formatierung Eintrag: long, lat; plz
+const SOURCE_FILE = "example_input.csv"; //input file
 const EXPORT_NAME = "out.csv" //output file
 
 //Liste aller Ausgangspunkte als Postleitzahl
 const start = [
-  "13509",
-  "01159",
-  "45145",
-  "22525",
-  "30419",
-  "76199",
-  "04159",
-  "80686",
-  "90431",
-  "64546",
-  "70794",
+  "13509", //Berlin
+  "80686", //München
 ];
 let start_points = [];
 
@@ -42,8 +33,9 @@ const csvWriter = createCsvWriter({
 
 getZipCodes((start_points, all) => {
   result = [];
+  console.log("start calculation");
+
   for (i = 0; i < all.length; i++) {
-    console.log(i)
     let min_dis = -1;
     let min_point;
     for (j = 0; j < start_points.length; j++) {
@@ -69,8 +61,7 @@ async function getZipCodes(callback) {
       const x = {
         lat: parseFloat(cords[0]),
         long: parseFloat(cords[1]),
-        name: row["1"],
-        code: row["2"],
+        code: row["1"],
       };
       all.push(x);
       for (i = 0; i < start.length; i++) {
