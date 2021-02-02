@@ -1,0 +1,17 @@
+{
+  "name": "zipcodes",
+  "version": "1.0.0",
+  "description": "List of Distances between two zip codes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthias Jugan",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^2.3.3",
+    "csv-writer": "^1.6.0",
+    "parse-kmz": "^1.0.0",
+    "xml2js": "^0.4.23"
+  }
+}
