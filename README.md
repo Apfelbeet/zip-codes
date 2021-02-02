@@ -5,4 +5,4 @@ Die Ausgangspunkte können in der index.js bearbeitet werden, sowie die Namen de
 
 Ausführung mit node.js:
 >npm update //download packages  
->"node ./index.js" //führt Skript aus
+>node ./index.js //führt Skript aus
