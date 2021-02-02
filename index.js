@@ -4,7 +4,7 @@ const fs = require("fs");
 
 //Kopfzeile: Geo Point;Postleitzahl
 //Formatierung Eintrag: long, lat; plz
-const SOURCE_FILE = "example_input.csv"; //input file
+const SOURCE_FILE = "in.csv"; //input file
 const EXPORT_NAME = "out.csv" //output file
 
 //Liste aller Ausgangspunkte als Postleitzahl
